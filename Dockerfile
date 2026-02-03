@@ -12,4 +12,5 @@ RUN comfy model download --url https://huggingface.co/black-forest-labs/FLUX.1-s
 RUN comfy model download --url https://huggingface.co/Comfy-Org/HiDream-I1_ComfyUI/resolve/main/split_files/diffusion_models/hidream_i1_full_fp16.safetensors --relative-path models/diffusion_models --filename hidream_i1_full_fp16.safetensors
 
 # copy all input data (like images or videos) into comfyui (uncomment and adjust if needed)
+
 # COPY input/ /comfyui/input/
