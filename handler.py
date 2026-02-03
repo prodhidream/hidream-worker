@@ -866,7 +866,7 @@ def handler(job):
     print(f"worker-comfyui - Job completed. Returning {len(output_data)} image(s).")   
     return final_result
 
-
 if __name__ == "__main__":
     print("worker-comfyui - Starting handler...")
     runpod.serverless.start({"handler": handler})
+
