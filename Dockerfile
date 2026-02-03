@@ -3,6 +3,9 @@ FROM runpod/worker-comfyui:5.5.1-base
 
 COPY handler.py /handler.py
 
+# Ensure python uses our handler
+CMD ["python", "/handler.py"]
+
 # download models into comfyui
 RUN comfy model download --url https://huggingface.co/Comfy-Org/HiDream-I1_ComfyUI/resolve/main/split_files/text_encoders/clip_l_hidream.safetensors --relative-path models/text_encoders --filename clip_l_hidream.safetensors
 RUN comfy model download --url https://huggingface.co/Comfy-Org/HiDream-I1_ComfyUI/resolve/main/split_files/text_encoders/clip_g_hidream.safetensors --relative-path models/text_encoders --filename clip_g_hidream.safetensors
@@ -14,3 +17,4 @@ RUN comfy model download --url https://huggingface.co/Comfy-Org/HiDream-I1_Comfy
 # copy all input data (like images or videos) into comfyui (uncomment and adjust if needed)
 
 # COPY input/ /comfyui/input/
+
